@@ -1,0 +1,23 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int n = nums.length;
+        
+        int j = 0;
+        while (j < n){
+            currSum += nums[j];
+            
+            if (currSum > maxSum){
+                maxSum = currSum;
+            }
+
+            if (currSum < 0){
+                currSum = 0;
+            }
+            
+            j++;
+        }
+        return maxSum;
+    }
+}
